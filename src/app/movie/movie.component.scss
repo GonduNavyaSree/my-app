@@ -1,0 +1,40 @@
+.user-container {
+    overflow: hidden;
+    width: 200px;
+    gap: 30px;
+    display: flex;
+    justify-content: start;
+}
+
+.container {
+    gap: 20px; 
+    margin: 30px;
+    
+}
+
+.user-container > img {
+    width: 200px;
+    margin: 0px;
+    display: flex;
+    justify-content: start;
+}
+
+.user-container > p {
+    font-size: 1.2rem;
+}
+
+// .user-container {
+//     text-align: center;
+//     overflow: hidden;
+// }
+
+// .user-container > p {
+//     font-size: 1.2rem;
+// }
+
+// .user-container > img {
+//     height: 200px;
+//     border-radius: 0;
+//     width: 100px;
+//     display: grid;
+// }

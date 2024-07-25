@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    gap: 16px; 
+    padding: 16px;
+}
+
+.user-container > img {
+    height: 100px; 
+    width: 100px; 
+}
+
+.user-container > p {
+    font-size: 1.2rem;
+    margin: 0;
+}

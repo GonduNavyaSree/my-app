@@ -3,21 +3,17 @@
   <p>Hello <span>{{ name }} 😁😁</span></p>
 </div> -->
 
-<!-- <div class="container">
-  <div *ngFor="let list of movies" class="user-container">
+<div class="container">
+  <div *ngFor="let list of movie" class="user-container">
     <img src="{{ list.poster }}" alt="Poster" />
+    <button onclick()>Toggle</button>
     <p>{{ list.name }}</p>
     <p>{{ list.rating }}</p>
     <p>{{ list.summary }}</p>
   </div>
-
-</div> -->
-
-
+</div>
 
 <!--Property Binding-->
-  <!-- @for(list of movies; track $index) {
-    <app-user-app [name]="list.name" [poster]="list.poster"></app-user-app>
-  } -->
-
-<router-outlet /> 
+<!-- <app-color-game></app-color-game> -->
+<!-- <app-counter></app-counter> -->
+<router-outlet />

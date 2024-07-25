@@ -1,0 +1,10 @@
+<div class="counter-container">
+  <button (click)="likeIncrement()">👍{{ like }}</button>
+  <button (click)="likeDecrement()">👎{{ dislike }}</button>
+</div>
+
+@if((like - dislike) >= 10) {
+<h1>You are Awesome</h1>
+}
+
+<progress [max]="like + dislike" [value]="like"></progress>
