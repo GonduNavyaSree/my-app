@@ -1,0 +1,31 @@
+// .user-container {
+//     overflow: hidden;
+//     width: 200px;
+//     gap: 30px;
+// }
+
+// .container {
+//     display: flex;
+//     gap: 20px; 
+//     margin: 30px;
+// }
+
+// .user-container > img {
+//     width: 200px;
+//     margin: 0px;
+// }
+
+.user-container > img {
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+}
+
+.user-container {
+    text-align: center;
+}
+
+.user-container > p {
+    font-size: 1.2rem;
+}
