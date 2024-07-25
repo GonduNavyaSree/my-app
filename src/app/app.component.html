@@ -3,15 +3,27 @@
   <p>Hello <span>{{ name }} 😁😁</span></p>
 </div> -->
 
-<div class="container">
+<!-- <div class="container">
   <div *ngFor="let list of movie" class="user-container">
     <img src="{{ list.poster }}" alt="Poster" />
-    <button onclick()>Toggle</button>
+
+    @if(show) {
+    <button (onclick)="displaytext()">Toggle</button>
+    }
     <p>{{ list.name }}</p>
     <p>{{ list.rating }}</p>
     <p>{{ list.summary }}</p>
   </div>
-</div>
+</div> -->
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/color">Color Game</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 
 <!--Property Binding-->
 <!-- <app-color-game></app-color-game> -->

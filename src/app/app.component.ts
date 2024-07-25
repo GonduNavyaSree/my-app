@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserAppComponent } from "./user-app/user-app.component";
 import { MovieComponent } from "./movie/movie.component";
 import { CounterComponent } from "./counter/counter.component";
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserAppComponent, MovieComponent, CounterComponent, ColorGameComponent, MovieListComponent, CommonModule, FormsModule],
+  imports: [RouterOutlet, UserAppComponent, MovieComponent, CounterComponent, ColorGameComponent, MovieListComponent, CommonModule, FormsModule, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -54,6 +54,8 @@ export class AppComponent {
 
   show = true;
 
-  
+  displaytext() {
+    this.show = !this.show;
+  }
 }
 
