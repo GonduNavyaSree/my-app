@@ -1,1 +1,16 @@
-<p>movie-list works!</p>
+<div class="cls-container">
+  <label for="name">Name:</label>
+  <input type="text" [(ngModel)]="name" required />
+  <label for="poster">Poster URL:</label>
+  <input type="text" [(ngModel)]="poster" required />
+  <label for="rating">Rating:</label>
+  <input type="number" [(ngModel)]="rating" required />
+  <label for="summary">Summary:</label>
+  <input type="text" [(ngModel)]="summary" required /><br />
+  <button (click)="addMovie()" type="submit" class="button">Add Movie</button>
+</div>
+<div class="wholecontainer">
+  @for(movie of movies ; track $index){
+  <app-movie [movie]="movie" (delete)="deleteMovieP($event)" />
+  }
+</div>

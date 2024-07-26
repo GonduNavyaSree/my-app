@@ -1,14 +1,15 @@
-<!-- <div class="container">
-    <div *ngFor="let list of movie" class="user-container">
-      <img src="{{ list.poster }}" alt="Poster" />
-      <p>{{ list.name }}</p>
-      <p>{{ list.rating }}</p>
-      <p>{{ list.summary }}</p>
+<body>
+  <div class="container">
+    <img src="{{ movie.poster }}" alt="Poster" />
+    <div class="text-column">
+      <h1>{{ movie.name }}</h1>
+      <p class="rating">⭐ {{ movie.rating }}</p>
     </div>
-</div>
-  id: "99",
-  name: "Vikram",
-  poster: "https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
-  rating: 8.4,
-  summary: "Members of a black ops team must track and eliminate a gang of masked murderers.",
-  trailer: -->
+    <button (click)="showDescription()">Toggle description</button>
+    @if (show) {
+    <p class="summary-text">{{ movie.summary }}</p>
+    }
+    <app-counter />
+    <button (click)="onDelete()">Delete</button>
+  </div>
+</body>
