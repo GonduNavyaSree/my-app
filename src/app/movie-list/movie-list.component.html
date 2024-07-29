@@ -1,4 +1,4 @@
-<div class="cls-container">
+<div class="movie-container">
   <!-- <label for="name">Name:</label>
   <input type="text" [(ngModel)]="name" required />
   <label for="poster">Poster URL:</label>
@@ -8,26 +8,25 @@
   <label for="summary">Summary:</label>
   <input type="text" [(ngModel)]="summary" required /><br /> -->
 
-
   <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="name" required placeholder="Ex. Navya" />
   </mat-form-field>
-  
+
   <mat-form-field>
     <mat-label>Poster</mat-label>
     <input matInput [(ngModel)]="poster" required placeholder="Ex. https//:" />
   </mat-form-field>
-  
+
   <mat-form-field>
     <mat-label>Rating</mat-label>
     <input matInput [(ngModel)]="rating" required placeholder="0" />
   </mat-form-field>
-  
+
   <button (click)="addMovie()" type="submit" class="button">Add Movie</button>
 </div>
-<div class="wholecontainer">
+<div class="whole-container">
   @for(movie of movies ; track $index){
-  <app-movie [movie]="movie" (delete)="deleteMovieP($event)" />
+  <app-movie [movie]="movie" (delete)="deleteMovie($event)" />
   }
 </div>
