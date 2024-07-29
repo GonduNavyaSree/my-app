@@ -1,15 +1,24 @@
 <body>
   <div class="container">
     <img src="{{ movie.poster }}" alt="Poster" />
-    <div class="text-column">
+    <mat-card-content class="text-column">
       <h1>{{ movie.name }}</h1>
       <p class="rating">⭐ {{ movie.rating }}</p>
-    </div>
-    <button (click)="showDescription()">Toggle description</button>
+    </mat-card-content>
+    <button
+    mat-stroked-button
+    (click)="showDescription()">Toggle description</button>
+
+
     @if (show) {
     <p class="summary-text">{{ movie.summary }}</p>
     }
     <app-counter />
-    <button (click)="onDelete()">Delete</button>
+    <button
+      (click)="onDelete()"
+      mat-fab
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 </body>

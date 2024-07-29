@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CounterComponent } from "../counter/counter.component";
 import { IMovie } from '../app.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 // interface Movie {
 //   name: string;
@@ -12,7 +15,7 @@ import { IMovie } from '../app.component';
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule, CounterComponent],
+  imports: [CommonModule, CounterComponent, MatIconModule, MatButtonModule, MatCardModule],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })

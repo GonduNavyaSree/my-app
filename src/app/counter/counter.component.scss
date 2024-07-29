@@ -1,5 +1,11 @@
-.counter-container {
+.button-like {
+    margin-bottom: 20px;
     display: flex;
-    align-items: center;
     gap: 0.5rem;
+}
+
+.progress-bar {
+    width:40%;
+    height: 20px; 
+    margin-top: 10px;
 }

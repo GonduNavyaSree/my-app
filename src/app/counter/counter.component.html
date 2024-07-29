@@ -1,10 +1,14 @@
-<div class="counter-container">
-  <button (click)="likeIncrement()">👍{{ like }}</button>
-  <button (click)="likeDecrement()">👎{{ dislike }}</button>
+<div class="button-like">
+  <button mat-icon-button color="primary" (click)="likeIncrement()">
+    👍{{ like }}
+  </button>
+  <button mat-icon-button color="error" (click)="likeDecrement()">
+    👎{{ dislike }}
+  </button>
 </div>
 
 @if((like - dislike) >= 10) {
-<h1>You are Awesome</h1>
+<h5>You are Awesome</h5>
 }
 
-<progress [max]="like + dislike" [value]="like"></progress>
+<progress class="progress-bar" [max]="like + dislike" [value]="like"></progress>

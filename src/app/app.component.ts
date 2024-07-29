@@ -39,6 +39,18 @@ export class AppComponent {
       summary:
         'RRR is an upcoming Indian Telugu-language period action drama film directed by S. S. Rajamouli, and produced by D. V. V. Danayya of DVV Entertainments.',
     },
+    {
+      name: "Baahubali",
+      poster: "https://flxt.tmsimg.com/assets/p11546593_p_v10_af.jpg",
+      rating: 8,
+      summary: "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy."
+    },
+    {
+      name: "Om Bhem Bush",
+      poster: "https://thesouthfirst.com/wp-content/uploads/2024/03/Om-Bheem-Bush-is-a-buddy-comedy.png",
+      rating: 9,
+      summary: "Om Bheem Bush is a 2024 Indian Telugu-language horror comedy film written and directed by Sree Harsha Konuganti and produced by Sunil Balusu under the banner V Celluloid."
+    },
   ]
 }
 
