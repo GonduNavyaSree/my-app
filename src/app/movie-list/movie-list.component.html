@@ -1,12 +1,29 @@
 <div class="cls-container">
-  <label for="name">Name:</label>
+  <!-- <label for="name">Name:</label>
   <input type="text" [(ngModel)]="name" required />
   <label for="poster">Poster URL:</label>
   <input type="text" [(ngModel)]="poster" required />
   <label for="rating">Rating:</label>
   <input type="number" [(ngModel)]="rating" required />
   <label for="summary">Summary:</label>
-  <input type="text" [(ngModel)]="summary" required /><br />
+  <input type="text" [(ngModel)]="summary" required /><br /> -->
+
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name" required placeholder="Ex. Navya" />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Poster</mat-label>
+    <input matInput [(ngModel)]="poster" required placeholder="Ex. https//:" />
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Rating</mat-label>
+    <input matInput [(ngModel)]="rating" required placeholder="0" />
+  </mat-form-field>
+  
   <button (click)="addMovie()" type="submit" class="button">Add Movie</button>
 </div>
 <div class="wholecontainer">
