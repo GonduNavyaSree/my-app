@@ -2,9 +2,9 @@
 
 <button (click)="onclick()">Add Color</button>
 
-@for(color1 of colorList; track $index){
-<div class="color-box" [style.background-color]="color1"></div>
+@for(sampleColor of colorList; track $index){
+<div class="color-box" [style.background-color]="sampleColor"></div>
 }
 
-// It will add the text content of input field
+<!-- It will add the text content of input field -->
 <!-- <p>{{color}}</p> -->
