@@ -1,14 +1,19 @@
 import { Routes } from '@angular/router';
 import { ColorGameComponent } from './color-game/color-game.component';
 import { UserAppComponent } from './user-app/user-app.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 export const routes: Routes = [
+    {
+        path: 'movielist',
+        component: MovieListComponent,
+    },
     {
         path: 'color',
         component: ColorGameComponent,
     },
     {
-        path: 'user-app',
+        path: 'user',
         component: UserAppComponent,
     }
 ];
