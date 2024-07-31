@@ -49,12 +49,11 @@ export class MovieListComponent {
       .catch(() => {
         this.isLoading = false;
         this.msg = 'Something went wrong 🥲';
-    });
+      });
   }
 
-  // deleteMovieP(movie: IMovie) {
-  //   // let index = this.movies.indexOf(movie);
-  //   // this.movies.splice(index, 1);
-  //   this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
-  // }
+  // delete -> refresh
+  deleteMovieP(movie: IMovie) {
+    this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
+  }
 }

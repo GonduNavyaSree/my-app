@@ -105,10 +105,10 @@ export class MovieService {
     );
   }
 
-  // deleteMovie(movie: movies) {
-  //   return fetch('https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${movies.id}'),(method: DELETE)
-  //   .then(
-  //     (res) => res.json()
-  //   );
-  // }
+  deleteMovie(movie: IMovie) {
+    return fetch(
+      `https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${movie.id}`,
+      { method: 'Delete' }
+    ).then((res) => res.json());
+  }
 }
