@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IMovie } from './app.component';
+import { NewMovie } from './movie';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,6 @@ import { IMovie } from './app.component';
 export class MovieService {
 
   constructor() { }
-  MovieService: any;
   movies: Array<IMovie> = [
     {
       "id": "99",
@@ -88,6 +88,23 @@ export class MovieService {
     }
   ]  
 
+  
+  addMovie(newMovie: NewMovie) {
+    // this.movieList.push(newMovie);
+
+    // Post
+    // 1. method
+    // 2. body - Data & JSON
+    // 3. Header - JSON
+
+    return fetch(`https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies`, {
+      method: 'POST',
+      body: JSON.stringify(newMovie),
+      headers: {
+        'Content-type': 'application/json',
+      },
+    }).then((res) => res.json());
+  }
 
   getMovieByIdex(idx: number) {
     return this.movies[idx];

@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MovieService } from '../movie.service';
+import { AddMovieReactiveFormsComponent } from "../add-movie-reactive-forms/add-movie-reactive-forms.component";
 
 @Component({
   selector: 'app-movie-list',
@@ -20,7 +21,8 @@ import { MovieService } from '../movie.service';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-  ],
+    AddMovieReactiveFormsComponent
+],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',
 })
@@ -35,25 +37,41 @@ export class MovieListComponent {
   isLoading: boolean = true;
   msg = '';
 
-  ngOnInit() {
-    this.loadMovies();
+  name = '';
+  poster = '';
+  rating = '';
+  summary = '';
+  addMovie() {
+    let newMovie: IMovie = {
+      name: this.name,
+      poster: this.poster,
+      rating: +this.rating,
+      summary: this.summary,
+      id: ''
+    };
+
+    this.movies.push(newMovie);
   }
 
-  loadMovies() {
-    this.movieservice
-      .getAllMoviesP()
-      .then((data) => {
-        this.movies = data;
-        this.isLoading = false;
-      })
-      .catch(() => {
-        this.isLoading = false;
-        this.msg = 'Something went wrong 🥲';
-      });
-  }
+  // ngOnInit() {
+  //   this.loadMovies();
+  // }
+
+  // loadMovies() {
+  //   this.movieservice
+  //     .getAllMoviesP()
+  //     .then((data) => {
+  //       this.movies = data;
+  //       this.isLoading = false;
+  //     })
+  //     .catch(() => {
+  //       this.isLoading = false;
+  //       this.msg = 'Something went wrong 🥲';
+  //     });
+  // }
 
   // delete -> refresh
-  deleteMovieP(movie: IMovie) {
-    this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
-  }
+  // deleteMovieP(movie: IMovie) {
+  //   this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
+  // }
 }

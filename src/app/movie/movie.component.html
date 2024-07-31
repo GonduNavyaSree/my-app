@@ -1,24 +1,44 @@
-<body>
-  <div class="container">
-    <img class="img" src="{{ movie.poster }}" alt="Poster" />
-    <div class="text-column">
-      <h1>{{ movie.name }}</h1>
+<mat-card class="movie-container">
+  <img src="{{ movie.poster }}" alt="{{ movie.name }}" class="movie-poster" />
+  <mat-card-content>
+    <div class="movie-spec">
+      <h2 class="movie-title">
+        {{ movie.name }}
+        <button
+          mat-icon-button
+          aria-label="Toggle summary"
+          (click)="showDescription()"
+        >
+          <mat-icon>{{
+            show ? "keyboard_arrow_up" : "keyboard_arrow_down"
+          }}</mat-icon>
+        </button>
 
-      <button mat-icon-button class="details" routerLink="/movie/{{ id }}">
-        <mat-icon>info</mat-icon>
-      </button>
-      <p class="rating">⭐ {{ movie.rating }}</p>
+        <button
+          mat-icon-button
+          aria-label="Details of movie"
+          routerLink="/movies/{{ id }}"
+        >
+          <mat-icon>info</mat-icon>
+        </button>
+      </h2>
+      <p class="movie-rating">⭐ {{ movie.rating }}</p>
     </div>
-    <button mat-stroked-button (click)="showDescription()">
-      Toggle description
-    </button>
 
-    @if (show) {
-    <p class="summary-text">{{ movie.summary }}</p>
+    @if(show){
+    <p class="movie-summary">{{ movie.summary }}</p>
     }
-    <app-counter />
-    <button class="delete-btn" (click)="deleteMovie()" mat-fab>
-      <mat-icon>delete</mat-icon>
-    </button>
-  </div>
-</body>
+
+    <div class="action-buttons-container">
+      <app-counter />
+      <button
+        mat-icon-button
+        aria-label="Delete movie"
+        color="warn"
+        (click)="deleteMovie()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

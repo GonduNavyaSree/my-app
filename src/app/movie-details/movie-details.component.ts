@@ -19,8 +19,7 @@ export class MovieDetailsComponent {
 
   constructor(
     private movieservice: MovieService,
-    private route: ActivatedRoute, // DI
-    private sanitizer: DomSanitizer
+    private route: ActivatedRoute
   ) {}
 
   // After Initialization of the component
