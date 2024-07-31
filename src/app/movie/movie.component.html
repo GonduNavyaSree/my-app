@@ -1,10 +1,14 @@
 <body>
   <div class="container">
     <img class="img" src="{{ movie.poster }}" alt="Poster" />
-    <mat-card-content class="text-column">
+    <div class="text-column">
       <h1>{{ movie.name }}</h1>
+
+      <button mat-icon-button class="details" routerLink="/movie/{{ id }}">
+        <mat-icon>info</mat-icon>
+      </button>
       <p class="rating">⭐ {{ movie.rating }}</p>
-    </mat-card-content>
+    </div>
     <button mat-stroked-button (click)="showDescription()">
       Toggle description
     </button>

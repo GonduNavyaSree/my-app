@@ -7,6 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MovieService } from '../movie.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -26,6 +27,10 @@ import { MatInputModule } from '@angular/material/input';
 export class MovieListComponent {
   @Input() movies: Array<IMovie> = [];
 
+  constructor(public movieservice: MovieService) {
+    this.movies = this.movieservice.movies;
+  }
+
   name = '';
   poster = '';
   rating = '';
@@ -37,6 +42,7 @@ export class MovieListComponent {
       poster: this.poster,
       rating: +this.rating,
       summary: this.summary,
+      id: '',
     };
     this.movies.push(latestMovie);
   }

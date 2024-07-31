@@ -5,6 +5,7 @@ import { IMovie } from '../app.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { RouterLink } from '@angular/router';
 
 // interface Movie {
 //   name: string;
@@ -15,12 +16,13 @@ import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule, CounterComponent, MatIconModule, MatButtonModule, MatCardModule],
+  imports: [CommonModule, CounterComponent, MatIconModule, MatButtonModule, MatCardModule, RouterLink],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
 export class MovieComponent {
   @Input() movie = {
+    id: '99',
     name: 'Vikram',
     poster:
       'https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg',
@@ -30,7 +32,7 @@ export class MovieComponent {
   };
 
   show: boolean = true;
-
+  @Input() id = 0;
   showDescription() {
     this.show = !this.show;
   }
