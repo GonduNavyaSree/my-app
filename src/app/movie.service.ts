@@ -93,6 +93,10 @@ export class MovieService {
     return this.movies[idx];
   }
 
+  getMovieList() {
+    return this.movies;
+  }
+
   getMovieByIdP(id: string): Promise<IMovie> {
     return fetch(
       `https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${id}`

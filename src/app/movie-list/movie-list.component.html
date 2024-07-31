@@ -30,8 +30,10 @@
   }
 </div>
 <div class="whole-container">
-  @for(movie of movies ; track $index){
-  <app-movie [movie]="movie"/>
+  @for(movie of movies ; track movie.id){
+  <app-movie [movie]="movie"
+  (deleteMovieEvent)="deleteMovieP($event)"
+  [id]="movie.id"/>
   }
 </div>
 <h1>{{ msg }}</h1>
