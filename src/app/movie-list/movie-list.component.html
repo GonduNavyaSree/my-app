@@ -8,7 +8,7 @@
   <label for="summary">Summary:</label>
   <input type="text" [(ngModel)]="summary" required /><br /> -->
 
-  <mat-form-field>
+  <!-- <mat-form-field>
     <mat-label>Name</mat-label>
     <input matInput [(ngModel)]="name" required placeholder="Ex. Navya" />
   </mat-form-field>
@@ -23,10 +23,15 @@
     <input matInput [(ngModel)]="rating" required placeholder="0" />
   </mat-form-field>
 
-  <button (click)="addMovie()" type="submit" class="button">Add Movie</button>
+  <button (click)="addMovie()" type="submit" class="button">Add Movie</button> -->
+
+  @if(isLoading){
+    <h1>Loading...</h1>
+  }
 </div>
 <div class="whole-container">
   @for(movie of movies ; track $index){
-  <app-movie [movie]="movie" (delete)="deleteMovie($event)" />
+  <app-movie [movie]="movie"/>
   }
 </div>
+<h1>{{ msg }}</h1>

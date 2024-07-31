@@ -25,30 +25,36 @@ import { MovieService } from '../movie.service';
   styleUrl: './movie-list.component.scss',
 })
 export class MovieListComponent {
-  @Input() movies: Array<IMovie> = [];
+  movies: Array<IMovie> = [];
 
   constructor(public movieservice: MovieService) {
     this.movies = this.movieservice.movies;
   }
 
-  name = '';
-  poster = '';
-  rating = '';
-  summary = '';
+  // movieList: Array<IMovie> = []; // Model -> View
+  isLoading: boolean = true;
+  msg = '';
 
-  addMovie() {
-    let latestMovie: IMovie = {
-      name: this.name,
-      poster: this.poster,
-      rating: +this.rating,
-      summary: this.summary,
-      id: '',
-    };
-    this.movies.push(latestMovie);
+  ngOnInit() {
+    this.loadMovies();
   }
 
-  deleteMovie(movie: IMovie) {
-    let index = this.movies.indexOf(movie);
-    this.movies.splice(index, 1);
+  loadMovies() {
+    this.movieservice
+      .getAllMoviesP()
+      .then((data) => {
+        this.movies = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong 🥲';
+    });
   }
+
+  // deleteMovieP(movie: IMovie) {
+  //   // let index = this.movies.indexOf(movie);
+  //   // this.movies.splice(index, 1);
+  //   this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
+  // }
 }
