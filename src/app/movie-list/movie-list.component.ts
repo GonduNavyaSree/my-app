@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MovieService } from '../movie.service';
 import { AddMovieReactiveFormsComponent } from "../add-movie-reactive-forms/add-movie-reactive-forms.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -27,12 +28,9 @@ import { AddMovieReactiveFormsComponent } from "../add-movie-reactive-forms/add-
   styleUrl: './movie-list.component.scss',
 })
 export class MovieListComponent {
-deleteMovieP($event: IMovie) {
-throw new Error('Method not implemented.');
-}
   movies: Array<IMovie> = [];
 
-  constructor(public movieservice: MovieService) {
+  constructor(public movieservice: MovieService, private router: Router) {
     this.movies = this.movieservice.movies;
   }
 
@@ -74,7 +72,13 @@ throw new Error('Method not implemented.');
   }
 
  
-  // deleteMovieP(movie: IMovie) {
-  //   this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
-  // }
+  deleteMovieP(movie: IMovie) {
+    this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
+  }
+
+  editMovieP(movie: IMovie) {
+    // /movies/edit/99
+    this.router.navigate(['movies', 'edit', movie.id]);
+    // this.movieService.editMovie(movie).then(() => this.loadMovies());
+  }
 }

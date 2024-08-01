@@ -34,6 +34,7 @@ export class MovieComponent {
   show: boolean = true;
   @Input() id!: string;
   @Output() deleteMovieEvent = new EventEmitter<IMovie>();
+  @Output() editMovieEvent = new EventEmitter<IMovie>();
   showDescription() {
     this.show = !this.show;
   }
@@ -41,5 +42,10 @@ export class MovieComponent {
   deleteMovie() {
     console.log('Child', this.movie);
     this.deleteMovieEvent.emit(this.movie);
+  }
+
+  editMovie() {
+    console.log('Child ❌', this.movie);
+    this.editMovieEvent.emit(this.movie);
   }
 }
