@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IMovie } from '../app.component';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MovieService } from '../movie.service';
 import { Router } from '@angular/router';
 import { NewMovie } from '../movie';
@@ -21,7 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './add-movie-reactive-forms.component.scss',
 })
 export class AddMovieReactiveFormsComponent {
-  @Input() movies: Array<IMovie> = [];
+  movies: Array<IMovie> = []; 
   movieForm: FormGroup;
 
   constructor(
@@ -29,9 +29,8 @@ export class AddMovieReactiveFormsComponent {
     private router: Router,
     private fb: FormBuilder
   ) {
-    this.movies = this.movieservice.getMovieList();
+    // this.movies = this.movieservice.getMovieList();
 
-    // formGroup -> formControlName
     this.movieForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       poster: '',
@@ -46,7 +45,6 @@ export class AddMovieReactiveFormsComponent {
 
   addMovie() {
     console.log(this.movieForm.value);
-    // Todo: Fix Add - Technical Debt
 
     if (this.movieForm.valid) {
       let newMovie: NewMovie = this.movieForm.value;

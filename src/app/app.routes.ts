@@ -25,9 +25,8 @@ export const routes: Routes = [
         children: [
           { path: '', component: MovieListComponent },
           { path: 'movie', component: MovieComponent },
-          { path: ':id', component: MovieDetailsComponent },
           { path: 'add', component: AddMovieReactiveFormsComponent },
-
+          { path: ':id', component: MovieDetailsComponent },
         ],
     }
 ];

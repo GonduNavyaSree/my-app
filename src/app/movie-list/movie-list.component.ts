@@ -27,6 +27,9 @@ import { AddMovieReactiveFormsComponent } from "../add-movie-reactive-forms/add-
   styleUrl: './movie-list.component.scss',
 })
 export class MovieListComponent {
+deleteMovieP($event: IMovie) {
+throw new Error('Method not implemented.');
+}
   movies: Array<IMovie> = [];
 
   constructor(public movieservice: MovieService) {
@@ -53,24 +56,24 @@ export class MovieListComponent {
     this.movies.push(newMovie);
   }
 
-  // ngOnInit() {
-  //   this.loadMovies();
-  // }
+  ngOnInit() {
+    this.loadMovies();
+  }
 
-  // loadMovies() {
-  //   this.movieservice
-  //     .getAllMoviesP()
-  //     .then((data) => {
-  //       this.movies = data;
-  //       this.isLoading = false;
-  //     })
-  //     .catch(() => {
-  //       this.isLoading = false;
-  //       this.msg = 'Something went wrong 🥲';
-  //     });
-  // }
+  loadMovies() {
+    this.movieservice
+      .getAllMoviesP()
+      .then((data) => {
+        this.movies = data;
+        this.isLoading = false;
+      })
+      .catch(() => {
+        this.isLoading = false;
+        this.msg = 'Something went wrong 🥲';
+      });
+  }
 
-  // delete -> refresh
+ 
   // deleteMovieP(movie: IMovie) {
   //   this.movieservice.deleteMovie(movie).then(() => this.loadMovies());
   // }
