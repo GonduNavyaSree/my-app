@@ -6,6 +6,7 @@ import { MovieComponent } from './movie/movie.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { authGuard } from './auth.guard';
 import { AddMovieReactiveFormsComponent } from './add-movie-reactive-forms/add-movie-reactive-forms.component';
+import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,7 @@ export const routes: Routes = [
           { path: '', component: MovieListComponent },
           { path: 'movie', component: MovieComponent },
           { path: 'add', component: AddMovieReactiveFormsComponent },
+          { path: 'edit/:id', component: EditMovieComponent },
           { path: ':id', component: MovieDetailsComponent },
         ],
     }

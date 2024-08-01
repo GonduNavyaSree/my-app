@@ -106,6 +106,26 @@ export class MovieService {
     }).then((res) => res.json());
   }
 
+  editMovie(updatedMovie: IMovie) {
+    // this.movieList.push(newMovie);
+
+    // Put
+    // 1. method
+    // 2. body - Data & JSON
+    // 3. Header - JSON
+
+    return fetch(
+      `https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${updatedMovie.id}`,
+      {
+        method: 'PUT',
+        body: JSON.stringify(updatedMovie),
+        headers: {
+          'Content-type': 'application/json',
+        },
+      }
+    ).then((res) => res.json());
+  }
+
   getMovieByIdex(idx: number) {
     return this.movies[idx];
   }
