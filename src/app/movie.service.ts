@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 import { IMovie } from './app.component';
 import { NewMovie } from './movie';
 
+// const API = "https://66a8c78ce40d3aa6ff59649c.mockapi.io";
+
+const API = "http://localhost:4000";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -97,7 +101,7 @@ export class MovieService {
     // 2. body - Data & JSON
     // 3. Header - JSON
 
-    return fetch(`https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies`, {
+    return fetch(`${API}/movies`, {
       method: 'POST',
       body: JSON.stringify(newMovie),
       headers: {
@@ -115,7 +119,7 @@ export class MovieService {
     // 3. Header - JSON
 
     return fetch(
-      `https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${updatedMovie.id}`,
+      `${API}/movies/${updatedMovie.id}`,
       {
         method: 'PUT',
         body: JSON.stringify(updatedMovie),
@@ -136,20 +140,20 @@ export class MovieService {
 
   getMovieByIdP(id: string): Promise<IMovie> {
     return fetch(
-      `https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${id}`
+      `${API}/movies/${id}`
     ).then((res) => res.json());
   }
 
   getAllMoviesP(): Promise<IMovie[]> {
-    return fetch('https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies').then(
+    return fetch(`${API}/movies`).then(
       (res) => res.json()
     );
   }
 
   deleteMovie(movie: IMovie) {
     return fetch(
-      `https://66a8c78ce40d3aa6ff59649c.mockapi.io/movies/${movie.id}`,
-      { method: 'Delete' }
+      `${API}/movies/${movie.id}`,
+      { method: 'DELETE' }
     ).then((res) => res.json());
   }
 }
