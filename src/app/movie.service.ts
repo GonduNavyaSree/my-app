@@ -4,7 +4,7 @@ import { NewMovie } from './movie';
 
 // const API = "https://66a8c78ce40d3aa6ff59649c.mockapi.io";
 
-const API = "http://localhost:4000";
+const API = "https://noddee1.onrender.com";
 
 @Injectable({
   providedIn: 'root'
